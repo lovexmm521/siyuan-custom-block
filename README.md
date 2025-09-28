@@ -2,7 +2,7 @@ Hello, future SiYuan Note creators!
 
 Welcome to this beginner's guide tailored for Custom Blocks. This guide aims to help friends like you who want to create powerful interactive features in SiYuan Note but don't know where to start. I will take you from scratch, step by step, to set up a professional front-end development environment and ultimately create your own fully functional interactive custom block.
 
-### [中文简体](https://github.com/lovexmm521/siyuan-custom-block-js/blob/main/README_zh_CN.md "null")
+### [中文简体说明](https://github.com/lovexmm521/siyuan-custom-block-js/blob/main/README_zh_CN.md "null")
 
 ### Prologue: Prerequisites
 
@@ -169,5 +169,6 @@ Let's review our steps:
 
 
 This is just the beginning. With this powerful workflow, you can integrate any modern front-end technology (like data visualization libraries, complex UI components, etc.) into your SiYuan Note blocks. Unleash your creativity to build your own unique note-taking experience!
+
 
 
