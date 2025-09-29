@@ -163,23 +163,26 @@ After writing the code, we need to "compile and bundle" it into the final produc
 
 After a successful execution, a `dist` folder will be generated in the project root, containing two files: `QianQian.js` and `QianQian.css`.
 
-### Step 5: Witness the Magic in SiYuan Note
+### Step 5: Witness the Magic in Siyuan Note
 
-Now, let's apply our creation in SiYuan Note!
+Now, let's apply our hard work to Siyuan Note!
 
 1. **Get the Code**:
 
-    - Open the `dist/QianQian.js` file with VS Code and copy **all** of its content.
-    - Open the `dist/QianQian.css` file with VS Code and copy **all** of its content.
-2. **Create a Custom Block**: In any document in SiYuan Note, type `/` to bring up the menu and select "Custom JS Block".
-3. **Paste the Code**:
+    - Open `dist/QianQian.js` with VS Code and copy **all of its content**.
+    - Open `dist/QianQian.css` with VS Code and copy **all of its content**.
+    - **Note:**  The `/* @webpack */` comment in the generated CSS file must also be copied.
+2. In the Siyuan Note plugin marketplace, find and install the [QianQian Block]([https://ld246.com/article/1758422482011](https://github.com/lovexmm521/siyuan-plugin-QianQiankuai) "null"). Then open the Custom Block JS settings.
+3. **Create a Custom Block**: On any block in any document in Siyuan Note:
 
-    - Click the `···` menu in the top-right corner of the newly created block and select "Block Attributes".
-    - In the attributes panel, find the `custom-js` attribute and paste the JS code into it.
-    - Find the `custom-css` attribute (if it doesn't exist, you can add it manually) and paste the CSS code into it. Press Enter to confirm.
-4. **See the Effect**: After completion, a beautiful button should immediately appear in your custom block! Hover over it to see the effect, then click it. Did a notification pop up in the center of the screen?
+    1. Click the block icon to the left of the block you want to modify (e.g., the ¶ icon for a paragraph block).
+    2. In the pop-up menu, select Plugins -\> "Custom Block CSS" or "Custom Block JS".
+    3. Enter your code directly into the expanded editing area. The code will save and take effect in real-time.
 
-**Debugging Tip**: In SiYuan Note, press `Ctrl+Shift+I` (Windows) or `Cmd+Opt+I` (Mac) to open the "Developer Tools". In the `Console` tab, you can see the output from `console.log`, which is very helpful for finding errors in your code.
+    Of course, you can achieve the same effect by manually adding `css` or `js` custom attributes to the block.
+4. **See the Result**: Once done, a beautiful button should immediately appear in your custom block! Hover your mouse over it to see the hover effect, then click it. Did a notification pop up in the center of the screen?
+
+**Debugging Tip**: In Siyuan Note, press `Ctrl+Shift+I` (Windows) or `Cmd+Opt+I` (Mac) to open the "Developer Tools". In the `Console` tab, you can see the output from `console.log`, which is very helpful for finding code errors.
 
 ### Conclusion
 
@@ -194,3 +197,4 @@ Let's review our steps:
 5. **Applied and tested**: Pasted the script and styles into SiYuan's `custom-js` and `custom-css` block attributes, respectively.
 
 This is just the beginning. With this powerful workflow, you can integrate any modern front-end technology (like data visualization libraries, complex UI components, etc.) into your SiYuan Note blocks. Unleash your creativity and build your own unique note-taking experience!
+
