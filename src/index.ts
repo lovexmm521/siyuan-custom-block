@@ -1,5 +1,6 @@
 // 引入其他模块，例如一个日志模块
 import { logBlockId } from './modules/logger';
+import './style.scss';
 
 // ----------------------------------------------------------------
 // 这里是您自定义块的主要逻辑
@@ -43,4 +44,5 @@ return () => {
     console.log('正在清理自定义块...');
     this.removeEventListener('click', handleClick);
 };
+
 
