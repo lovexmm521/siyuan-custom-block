@@ -172,7 +172,7 @@ Now, let's apply our hard work to Siyuan Note!
     - Open `dist/QianQian.js` with VS Code and copy **all of its content**.
     - Open `dist/QianQian.css` with VS Code and copy **all of its content**.
     - **Note:**  The `/* @webpack */` comment in the generated CSS file must also be copied.
-2. In the Siyuan Note plugin marketplace, find and install the [QianQian Block]([https://ld246.com/article/1758422482011](https://github.com/lovexmm521/siyuan-plugin-QianQiankuai)] "null"). Then open the Custom Block JS settings.
+2. In the Siyuan Note plugin marketplace, find and install the [QianQian Block](https://github.com/lovexmm521/siyuan-plugin-QianQiankuai) "null"). Then open the Custom Block JS settings.
 3. **Create a Custom Block**: On any block in any document in Siyuan Note:
 
     1. Click the block icon to the left of the block you want to modify (e.g., the ¶ icon for a paragraph block).
@@ -197,5 +197,6 @@ Let's review our steps:
 5. **Applied and tested**: Pasted the script and styles into SiYuan's `custom-js` and `custom-css` block attributes, respectively.
 
 This is just the beginning. With this powerful workflow, you can integrate any modern front-end technology (like data visualization libraries, complex UI components, etc.) into your SiYuan Note blocks. Unleash your creativity and build your own unique note-taking experience!
+
 
 
