@@ -27,7 +27,8 @@ module.exports = {
                         options: {
                             multiple: [
                                 { search: 'return ', replace: '__SIYUAN_SCRIPT_RETURN__ = ', flags: 'g' },
-                                { search: 'this', replace: '__SIYUAN_THIS__', flags: 'g' }
+                                // 【改动 1】: 将 'this' 伪装成一个不会被优化器修改的字符串属性访问
+                                { search: 'this', replace: 'window["__SIYUAN_THIS__"]', flags: 'g' }
                             ]
                         },
                     },
@@ -37,11 +38,8 @@ module.exports = {
             {
                 test: /\.s?css$/i,
                 use: [
-                    // 步骤 1: 将 CSS 提取到独立文件中
                     MiniCssExtractPlugin.loader,
-                    // 步骤 2: 将 CSS 转换为 CommonJS 模块
                     'css-loader',
-                    // 步骤 3: 将 Sass/SCSS 编译成 CSS
                     'sass-loader',
                 ],
             },
@@ -54,10 +52,17 @@ module.exports = {
         minimize: false,
     },
     plugins: [
-        // 注册 CSS 提取插件，并指定输出的文件名
         new MiniCssExtractPlugin({
             filename: 'QianQian.css',
         }),
+
+        new webpack.BannerPlugin({
+            banner: '/* @webpack */',
+            raw: true,
+            entryOnly: false,
+            include: /\.css$/,
+        }),
+
         // 我们自己的插件，只负责修复 JS 文件
         new (class SiyuanFinalizerPlugin {
             apply(compiler) {
@@ -72,7 +77,8 @@ module.exports = {
                                 if (assetName.endsWith('.js')) {
                                     let source = assets[assetName].source();
                                     source = source.replace(/__SIYUAN_SCRIPT_RETURN__\s*=\s*/g, 'return ');
-                                    source = source.replace(/__SIYUAN_THIS__/g, 'this');
+                                    // 【改动 2】: 使用正则表达式精确地将伪装后的占位符复原成 'this'
+                                    source = source.replace(/window\["__SIYUAN_THIS__"\]/g, 'this');
                                     assets[assetName] = new webpack.sources.RawSource(source);
                                 }
                             }
@@ -83,4 +89,3 @@ module.exports = {
         })(),
     ],
 };
-
